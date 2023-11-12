@@ -3,31 +3,31 @@
 
 
     function getComputerChoice()  {
-        let number = Math.floor((Math.random() * 3)) + 1;
-        if (number === 1){
-           return "scissor" ;
-         
-         }
-        else if (number === 2){
-            return "rock" ;
-            
-    
-        } else {
-            return "paper" ;
-          }
+        const Choices = ["rock", "paper", "scissors"];
+        return Choices[Math.floor(Math.random() * 3)];
         
     }
-    console.log("The Computer chooses" + " " + getComputerChoice());
-    
+  
+   playerSelction = prompt("Please make your choice of rock , paper or scissors!")
     function rockPaperScissor(playerSelction , computerSelection){
-       if (playerSelction === "rock" && computerSelection === "paper" ) {
-       console.log("You lose!") ;
+        computerSelection = computerSelection ;
+         playerSelction = playerSelction ;
+       
+        if (playerSelction === "rock" && computerSelection === "scissors" || 
+        playerSelction === "paper" && computerSelection === "rock" || 
+        playerSelction === "scissors" && computerSelection === "paper" ) {
+       return (`You win! ${playerSelction} beats ${computerSelection}` ) ;
        }
-       else  if (playerSelction =="paper" && computerSelection == "rock"){
-        console.log("you win!!") ;
-        
+       else if (playerSelction === computerSelection){
+        return(`Draw! ${playerSelection} and ${computerSelection}`);
        }
-     }
-     const computerSelection = getComputerChoice();
-     const playerSelction = "rock";
-     console.log(rockPaperScissor(playerSelction, computerSelection));
+       else {
+        console.log( `You Lose! ${computerSelection} beats ${playerSelection} Try Again.`)
+       }   
+    
+       }
+       const computerSelection = getComputerChoice();
+       
+   
+    console.log(rockPaperScissor(playerSelction, computerSelection));
+   
